@@ -1,0 +1,22 @@
+
+// 定义公开类 Test
+	// 定义主方法 main，在该方法中完成本关任务
+import java.util.Scanner;
+
+public class Test {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		for (int i=0;i<n;i++){
+			System.out.printf("%"+(n-i)*2+"s"," ");//输出空格
+			int number = 1;
+			for(int j=0;j<=i;j++){
+				System.out.printf("%4d",number);
+				number = number*(i-j)/(j+1);
+			}
+			System.out.println();
+		}
+		
+	}
+	
+}
