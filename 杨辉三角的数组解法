@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Test {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int yang = scan.nextInt();
+		int[][] yangHui = new int[yang][];
+		for(int i = 0;i < yang;i++) {
+			
+			yangHui[i] = new int[i+1];
+			//元素赋值
+			yangHui[i][0] = yangHui[i][i] = 1;
+			for(int j = 1;j < yangHui[i].length-1;j++) {
+				yangHui[i][j] = yangHui[i-1][j-1] + yangHui[i-1][j];
+			}
+		}
+		//遍历数组
+		for(int i =0;i < yangHui.length;i++) {
+			System.out.printf("%"+(yang-i)*2+"s"," ");
+			for(int j = 0; j < yangHui[i].length;j++) {
+				System.out.printf("%4d",yangHui[i][j]);
+			}
+			System.out.println();
+		}
+		
+	}
+	
+}
